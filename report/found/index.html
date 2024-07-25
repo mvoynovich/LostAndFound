@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <title>Report Found Item</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="/css/index.css" rel ="stylesheet">
+    <link rel="stylesheet" href="/css/forms.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/js/toolbox.js"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <a href="https://rpi.edu/">
+        <img id="logo" src="../../resources/RPIWhite.png" alt="RPI Background image">
+      </a>
+    </div>
+    <h1 id="title-text">Found Something?</h1>
+    
+    <!-- content -->
+
+    <div id="body-content">
+      <div id="entry-content"></div>
+      <div id="bottom-content">
+        <h3>Items should be brought to PubSafe.</h3>
+        <div class="horizontal-bar"></div>
+        <h3>Found something not listed?</h3>
+        <button onclick="showPopup()">Found Form</button>
+      </div>
+    </div>
+
+    <!-- end content -->
+
+    <div id="form-modal">
+      <div id = "container">
+        
+        <form id="discovered-form" action="javascript:postDiscoveredItem()" enctype="multipart/form-data">
+          <h1>Item Found Report</h1>
+          <br>
+          <div class = "row">
+            <div class = "input-data">
+              <input id="first-field" type="text" name="first" placeholder=" " required>
+              <div class="underline"></div>
+              <label for="first-field">First Name<em>*</em></label>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "input-data">
+              <input id="last-field" type="text" name="last" placeholder=" " required>
+              <div class="underline"></div>
+              <label for="last-field">Last Name<em>*</em></label>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "input-data">
+              <input id="email-field" type="text" name="email" placeholder=" " required>
+              <div class="underline"></div>
+              <label for="email-field">Email Address<em>*</em></label>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "input-data">
+              <input id="phone-field" type="text" name="phone" placeholder=" ">
+              <div class="underline"></div>
+              <label for="phone-field">Phone Number</label>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "input-data">
+              <input id="location-field" type="text" name="location" placeholder=" " required>
+              <label for="location-field">Location Found<em>*</em></label>
+              <div class="underline"></div>
+            </div>
+          </div>
+          
+          <div class = "row">
+            <div class = "nonText">
+              <label for="item-type-field">Item Type<em>*</em> : </label>
+              <select id="item-type-field" class="item-type-list" name="item_type" required>
+                <option value="">Placeholder</option>
+              </select>
+              <div class="underline"></div>
+            </div>  
+          </div>
+          
+          <div class = "row">
+            <div class = "nonText">
+              <label for="color-name-field">Color Name<em>*</em> : </label>
+              <select id="color-name-field" class="color-name-list" name="color_name" required>
+                <option value="">Placeholder</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class = "row">
+            <div class = "nonText">
+              <label for="found-timestamp-field">Time Found<em>*</em> : </label>
+              <a id = "now" href="javascript:setFieldDateToday('found-timestamp-field')">Now</a>
+              <input id="found-timestamp-field" class="timestamp-field" type="datetime-local" name="found_timestamp" required>
+              </div>
+          </div>
+
+          <div class = "row">
+            <div class = "input-data">
+              <input id="comments-field" type="text" name="comments" placeholder="  ">
+              <label for="comments-field">Additional Comments</label>
+              <div class="underline"></div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class = "nonText">
+              <label for="userImg-field">Upload a Picture<em>*</em> : </label>
+              <input id="userImg-field" type="file" name="userImg" accept="image/jpeg,image/png" required>
+            </div>
+          </div>
+          <input type="submit" id="submit">
+        </form>
+      </div>
+    </div>
+
+    <!-- pop up form end-->
+
+    <script src="/js/found/index.js"></script>
+
+  </body>
+</html>
