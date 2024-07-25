@@ -1,4 +1,3 @@
-# itws1100-Team06
 # Hound
 ### RPI's Lost and Found Forum
 
